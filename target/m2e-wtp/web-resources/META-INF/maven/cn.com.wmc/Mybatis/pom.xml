@@ -80,12 +80,11 @@
 			<version>3.3.0</version>
 		</dependency>
 
-		<!-- 引用通用的Mapper代码 -->
-		<!-- <dependency>
-		  <groupId>javax.persistence</groupId>
-		  <artifactId>persistence-api</artifactId>
-		  <version>1.0</version>
-		</dependency> -->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper</artifactId>
+			<version>3.3.9</version>
+		</dependency>
 		
 		<dependency>
 			<groupId>mysql</groupId>

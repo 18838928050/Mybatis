@@ -1,16 +1,10 @@
 package cn.com.wmc.model;
 
-import java.io.Serializable;
-
-import javax.persistence.Table;
-
 /*
  * 用户表
  */
-@Table(name="user_model")
-public class UserModel implements Serializable {
-	
-	private static final long serialVersionUID=1L;
+
+public class UserModelCopy {
 	
 	//用户表的主键id
 	private Long id;
