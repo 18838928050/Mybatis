@@ -12,7 +12,14 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
-
+		
+		<!-- 标签库 -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
@@ -73,6 +80,13 @@
 			<version>3.3.0</version>
 		</dependency>
 
+		<!-- 引用通用的Mapper代码 -->
+		<!-- <dependency>
+		  <groupId>javax.persistence</groupId>
+		  <artifactId>persistence-api</artifactId>
+		  <version>1.0</version>
+		</dependency> -->
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>

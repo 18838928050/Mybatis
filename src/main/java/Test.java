@@ -1,11 +1,11 @@
-import java.io.IOException;
-import java.io.Reader;
+import java.io.InputStream;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import ccn.com.wmac.mapper.UserMapper;
 import cn.com.wmc.model.UserModel;
 
 /**
@@ -18,17 +18,20 @@ import cn.com.wmc.model.UserModel;
 public class Test {
 
 	@org.junit.Test
-	public void test() throws IOException {
+	public void test() {
+
+		String resourse = "config/mybatis-config.xml";
+		InputStream inputStream = null;
 		try {
-			String resourse = "mybatis-config.xml";
-			Reader reader = Resources.getResourceAsReader(resourse);
-			SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
-			SqlSession session = sessionFactory.openSession();
-			//	session.clearCache();
-			UserModel userModel = session.selectOne("ccn.com.wmac.mapper.UserMapper.selectUser", 1);
-			System.out.println(userModel.getUserSex()+",,,,,");
-			System.out.println(userModel.getUserName());
+			// Resources 类为从类路径中加载资源
+			inputStream = Resources.getResourceAsStream(resourse);
 		} catch (Exception e) {
 		}
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		SqlSession session = sqlSessionFactory.openSession();
+		UserMapper userMapper = session.getMapper(UserMapper.class);
+		UserModel userModel = userMapper.selectUser(1L);
+		System.out.println(userModel.getUserName());
+		System.out.println(userModel.getUserSex());
 	}
 }

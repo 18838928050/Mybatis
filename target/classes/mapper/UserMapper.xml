@@ -5,9 +5,9 @@
 <mapper namespace="ccn.com.wmac.mapper.UserMapper">
 
 	<resultMap id="userMap" type="cn.com.wmc.model.UserModel">
-		<id column="id"  property="id" ></id>
-		<result column="user_name"  property="user_name" />
-		<result column="user_sex" property="userSex"/>
+		<id column="id"  property="id" jdbcType="BIGINT" ></id>
+		<result column="user_name"  property="userName" jdbcType="VARCHAR" />
+		<result column="user_sex" property="userSex" jdbcType="VARCHAR" />
 	</resultMap>
 
 	<select id="selectUser" parameterType="Long" resultMap="userMap">

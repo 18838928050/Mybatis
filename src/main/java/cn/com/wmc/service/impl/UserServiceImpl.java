@@ -21,14 +21,17 @@ public class UserServiceImpl implements UserService{
 	/* (non-Javadoc)
 	 * @see cn.com.wmc.service.UserService#insert()
 	 */
+	@Override
 	public void insertUser(UserModel userModel) {
 		// TODO Auto-generated method stub
 	  userMapper.insertUser(userModel);
 	}
 	
+	@Override
 	public UserModel selectUser(Long id) {
 		return userMapper.selectUser(id);
 	}
+	
 	
 	
 		/*public UserModel insert() {
@@ -48,7 +51,6 @@ public class UserServiceImpl implements UserService{
 		UserMapper userMapper = session.getMapper(UserMapper.class);
 		
 		return 	userMapper.selectBlog(1);
-	
 	}*/
 	
 
