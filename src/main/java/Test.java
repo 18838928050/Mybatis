@@ -15,7 +15,7 @@ import cn.com.wmc.model.UserModel;
 /**
  * @author： fu @time：2018年10月23日 下午12:08:19 @说明： 一份耕耘，一份收获
  **/
-public class Test {
+public class Test{
 
 	@org.junit.Test
 	public void test() {
@@ -33,5 +33,22 @@ public class Test {
 		UserModel userModel = userMapper.selectUser(1L);
 		System.out.println(userModel.getUserName());
 		System.out.println(userModel.getUserSex());
+	}
+	
+	
+	
+	@org.junit.Test
+	public void test2() {
+		
+		String resourse = "config/mybatis-config.xml";
+		InputStream inputStream = null;
+		try {
+			// Resources 类为从类路径中加载资源
+			inputStream = Resources.getResourceAsStream(resourse);
+		} catch (Exception e) {
+		}
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		SqlSession session = sqlSessionFactory.openSession();
+		
 	}
 }
