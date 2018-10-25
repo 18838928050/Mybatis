@@ -51,8 +51,10 @@ public class userController {
 		return userService.selectUser(id);
 	}
 	
-	
-	
+	@RequestMapping(value="select_user")
+	public void deleteUser() {
+		
+	}
 	
 	
 	

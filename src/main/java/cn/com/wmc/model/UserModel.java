@@ -1,16 +1,14 @@
 package cn.com.wmc.model;
 
 import java.io.Serializable;
-
-import javax.persistence.Table;
+import java.util.Date;
 
 /*
  * 用户表
  */
-@Table(name="user_model")
+@SuppressWarnings("serial")
 public class UserModel implements Serializable {
 	
-	private static final long serialVersionUID=1L;
 	
 	//用户表的主键id
 	private Long id;
@@ -20,7 +18,19 @@ public class UserModel implements Serializable {
 	
 	//用户表的密码
 	private String userSex;
+	
+	//入职日期
+	private Date entryDate;
+	
+	
 
+	public Date getEntryDate() {
+		return entryDate;
+	}
+
+	public void setEntryDate(Date entryDate) {
+		this.entryDate = entryDate;
+	}
 
 	public Long getId() {
 		return id;
@@ -48,8 +58,10 @@ public class UserModel implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserModel [id=" + id + ", userName=" + userName + ", userSex=" + userSex + "]";
+		return "UserModel [id=" + id + ", userName=" + userName + ", userSex=" + userSex
+				+ ", entryDate=" + entryDate + "]";
 	}
+
 
 
 	

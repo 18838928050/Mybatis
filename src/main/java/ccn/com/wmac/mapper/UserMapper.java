@@ -8,6 +8,10 @@ public interface UserMapper {
 	  UserModel selectUser(Long id);
 	  
 	//  @Select("insert into func_user(name,sex) values(#{name}, #{sex})")
-	  void insertUser(UserModel userModel);
+	  int insertUser(UserModel userModel);
+	  
+	  void deleteUserById(Long id);
+		
+	  UserModel updateById(UserModel userModel);
 	  
 	}
